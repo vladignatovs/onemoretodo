@@ -249,6 +249,25 @@ body {
     cursor: pointer;
 }
 
+.fa-regular {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    background: white;
+    cursor: pointer;
+    float: right;
+    bottom: 85px;
+}
+
+.fa-regular:hover { 
+    cursor: pointer;
+    background: rgb(209, 209, 209);
+}
+
+
 
 .timer {
     width: 255px;
@@ -382,9 +401,11 @@ class Timer {
         });
         
         this.el.reset.addEventListener("click", () => {
-            this.stop();
-            this.remainingSeconds = timerTime;
-            this.updateInterfaceTime();
+            if(!(this.el.hours.innerText == "00" && this.el.minutes.innerText == "00" && this.el.seconds.innerText == "00")) {
+                this.stop();
+                this.remainingSeconds = timerTime;
+                this.updateInterfaceTime();
+            }
         });
     }
         
@@ -418,6 +439,19 @@ class Timer {
                 this.updateInterfaceTime();
                 if (this.remainingSeconds === 0) {
                     this.stop();
+                    this.el.hours.parentElement.parentElement.style.filter = "brightness(50%)";
+                    const a = this.el.hours.parentElement.parentElement;
+                    const b = a.querySelector(".fa-regular");
+                    const c = a.querySelector(".timer__time").textContent;
+                    b.style.visibility = "";
+                    console.log(b);
+
+                    b.addEventListener("click", () => {
+                        this.el.hours.parentElement.parentElement.style.filter = "brightness(100%)";
+                        b.style.visibility = "hidden";
+                        this.remainingSeconds = c;
+                        this.updateInterfaceTime();
+                    });
                 }
             }, 1000);
         
@@ -458,10 +492,15 @@ function createTimer(li) {
 	const remove = document.createElement('button');
     remove.className = "fa-solid fa-trash-can";
     del_buttons[i].appendChild(remove);
+
+    const some_buttons = document.createElement("button");
+    some_buttons.className = "fa-regular fa-circle-xmark";
+    some_buttons.style.visibility = "hidden";
+    li.appendChild(some_buttons);
 	
     const specTimer = document.querySelectorAll(".timer");
     const timerTime = document.querySelectorAll(".timer__time");
-
+    
 
     new Timer(specTimer[i], timerTime[i].textContent);
     return li;

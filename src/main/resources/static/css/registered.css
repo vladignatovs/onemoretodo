@@ -10,34 +10,49 @@ input[type=text] {
     width: 100%;
     border: none;
     height: 30px;
-    background-color: white;
+    outline: 0;
+    color: rgb(60, 66, 87);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-height: 28px;
+    vertical-align: middle;
+    transition: background-color .24s, box-shadow .24s;
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.24s, 0.24s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
 }
 input[type=submit] {
     display: inline-grid;
-    padding: 0.5em 1.5em;
+    padding: 12px 17px;
     border: 0;
     background-color: rgb(232,229,223);
-    border-radius: 5px;
-    align-self: center;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 input[type=submit].fill-div {
     background:transparent;
     height: 200px; 
     width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
 }
 
 input[type=submit].main-input:hover {
-    color: white;
-    background-color: rgb(165, 162, 155);
-    animation: custom ease-in-out 0.2s;
+    background-color: #2222221a;
     cursor: pointer;
 }
 
 input[type=submit].log-out:hover {
-    color: white;
-    background-color: rgb(165, 162, 155);
-    animation: custom ease-in-out 0.2s;
+    background-color: #2222221a;
     cursor: pointer;
 }
 
@@ -70,6 +85,7 @@ ul {
 li {
     margin-bottom: 10px;
     padding-left: 15px;
+    padding-right: 15px;
 }
 
 ul.role {
@@ -77,16 +93,20 @@ ul.role {
     margin: 0;
     height: 0;
 }
+
 li.role {
     padding: 0;
 }
+
 .main-page {
-    top: 50px;
+    top: 35px;
     position: sticky;
     float: left;
     height: 85vh;
     width: 20%;
-    margin: 50px;
+    padding: 20px;
+    background: #22222222;
+    margin: 35px;
 }
 
 .main-list {
@@ -102,13 +122,14 @@ li.role {
     position: relative;
     color: white;
     top: 10px;
-    left: 96%;
     bottom: 7px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     border: none;
     background: rgb(255, 0, 0);
+    float: right;
+    right: 1.25%;
 }
 
 .fa-solid:hover {
