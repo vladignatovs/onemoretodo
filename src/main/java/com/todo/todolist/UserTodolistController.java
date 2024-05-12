@@ -1,6 +1,5 @@
 package com.todo.todolist;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.todo.domain.Task;
-import com.todo.domain.Todolist;
-import com.todo.domain.User;
 import com.todo.repository.TaskRepository;
 import com.todo.repository.TodolistRepository;
 import com.todo.repository.UserRepository;

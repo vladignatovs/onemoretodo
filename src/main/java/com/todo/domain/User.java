@@ -1,7 +1,5 @@
 package com.todo.domain;
 
-import java.util.List;
-
 import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.*;
@@ -26,9 +24,6 @@ public class User {
     private String email;
 
     private String password;
-
-    // @OneToMany(mappedBy = "user")
-    // private List<Todolist> todolists;
 
     private Role role;
 

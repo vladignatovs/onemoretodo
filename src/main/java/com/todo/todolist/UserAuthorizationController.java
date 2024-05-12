@@ -105,15 +105,5 @@ public class UserAuthorizationController {
         
         modelAndView.setViewName(String.format("redirect:/user/%s", id));
         return modelAndView;
-
-    }
-
-    @GetMapping("/registerDone")
-    ModelAndView registration(@RequestParam(value = "registered") String email) {
-        User user = userRepository.findByEmail(email);
-        ModelAndView modelAndView = new ModelAndView("viewUser");
-        modelAndView.addObject("email", user.getEmail());
-        modelAndView.addObject("password", user.getPassword());
-        return modelAndView;
     }
 }

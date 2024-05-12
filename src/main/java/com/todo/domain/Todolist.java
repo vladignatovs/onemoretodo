@@ -1,7 +1,5 @@
 package com.todo.domain;
 
-import java.util.List;
-
 import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.*;
@@ -10,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.NonFinal;
 
 @Entity
 @Table(name = "todolists")
@@ -31,7 +28,4 @@ public class Todolist {
     @JoinColumn(name = "user_id")
     @NotNull(message="THE OWNER USER DOESN'T EXIST")
     private User user;
-
-    // @OneToMany(mappedBy = "todolist")
-    // private List<Task> todolists;
 }
